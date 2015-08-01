@@ -11,7 +11,7 @@ class Task {
 	@BindingFormat('yyyy-MM-dd')
 	Date requiredBy
 
-	Boolean completed
+	String completed
 
 	Category category
 
