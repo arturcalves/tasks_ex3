@@ -43,8 +43,9 @@
 				<div>
 					<label>Categoria</label> 
 					<select name="category">
-						<option value="Pessoal">Pessoal</option>
-						<option value="Profissional">Profissional</option>
+						<g:each in="${categories}">
+ 							<option value="${it.id}">${it.nome}</option>						
+ 						</g:each>
 					</select>
 				</div>
 				<nav>
@@ -113,20 +114,20 @@ function initMetodo(){
 </script>
 <script id="taskRow" type="text/x-jQuery-tmpl">
 <tr>
-	<td>{{=task}}</td>
-	<td><time datetime="{{=requiredBy}}"> {{=requiredBy}}</time></td>
-	<td>{{=category}}</td>
+	<td>{{= task}}</td>
+	<td><time datetime="{{= requiredBy}}"> {{= requiredBy}}</time></td>
+	<td>{{= category_nome}}</td>
 	<td>
 		<nav>
-			<a href="#" class="editRow" data-task-id="{{=id}}">Editar</a>
+			<a href="#" class="editRow" data-task-id="{{= id}}">Editar</a>
 				<!--*********************************************************-->
 				<!-- TAREFA 4 - Marcar tarefa como completada                -->
 				<!-- adicionado classe completeRow para associar funcao ao   -->
 				<!-- clique, e adicionado atributo data-task-id para saber   -->
 				<!-- o id da tarefa que deve ser completada                  -->
 				<!--*********************************************************-->
-			<a href="#" class="completeRow" data-task-id="{{=id}}">Completar</a>
-			<a href="#" class="deleteRow" data-task-id="{{=id}}">Deletar</a>
+			<a href="#" class="completeRow" data-task-id="{{= id}}">Completar</a>
+			<a href="#" class="deleteRow" data-task-id="{{= id}}">Deletar</a>
 		</nav>
 	</td>
 </tr>
