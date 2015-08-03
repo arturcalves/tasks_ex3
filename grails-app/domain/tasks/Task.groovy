@@ -1,14 +1,11 @@
 package tasks
 
-import org.grails.databinding.BindingFormat
-
 class Task {
 
 	Integer id
 
 	String task
 
-	@BindingFormat('yyyy-MM-dd')
 	Date requiredBy
 
 	String completed
