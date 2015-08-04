@@ -86,31 +86,11 @@
 	<footer>Você tem <span id="taskCount">0</span> tarefas</footer>
 </body>
 <script>
-//*********************************************************
-// TAREFA 6 - Persistencia com IndexedDB
-// Da forma que foi proposto, caso o navegador tenha compatibilidade com o indexdb
-// tenta-se iniciar o uso da api do indexeddb
-// caso não contrário, verifica-se a compatibilidade como localStorage
-// e faz-se o uso da api do webstorage
-// em ambos os casos, em caso de sucesso executa o metodo initMetodo, 
-// que executa a funcao init e na sequencia carrega a tabela com a funcao loadTasks
-// ********************************************************
-
-$.getScript( "/tasks_ex3/assets/scripts/tasks-ajax.js" )
-.done(function( script, textStatus ) {
-	initMetodo();
-})
-.fail(function( jqxhr, settings, exception ) {
-	console.log( 'Failed to load indexed db script' );
-});
-
-function initMetodo(){
 	$(document).ready(function() {
 		tasksController.init($('#taskPage'), function() {
 			tasksController.loadTasks();
 		});
 	});
-}
 </script>
 <script id="taskRow" type="text/x-jQuery-tmpl">
 <tr>
