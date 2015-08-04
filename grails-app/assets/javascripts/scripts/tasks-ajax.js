@@ -15,7 +15,7 @@ storageEngine = function() {
 		save: function(type, obj, successCallback, errorCallback) {
             $.ajax({
                 method: "post",
-                url: "/tasks_ex3/task/save",
+                url: "task/save",
                 data: obj
             })
             .done(function( msg ) {                 
@@ -28,9 +28,8 @@ storageEngine = function() {
             $.ajax({
                method : 'get',
                dataType: "json",
-               url: "/tasks_ex3/task/getall",               
+               url: "task/getall",               
                success: function (data) {
-                   console.log(data);
                    var result = [];
                    $.each(data, function(i, v) {
                        result.push(v);
@@ -43,9 +42,8 @@ storageEngine = function() {
             $.ajax({
                 method : 'get',
                 dataType: "json",
-                url: "/tasks_ex3/task/delete/"+id,                
+                url: "task/delete/"+id,                
                 success: function (data) {                      
-                    console.log(data)
                     successCallback(id);
                 }
             });
@@ -54,9 +52,8 @@ storageEngine = function() {
             $.ajax({
                 method : 'get',
                 dataType: "json",
-                url: "/tasks_ex3/task/get/"+id,
+                url: "task/get/"+id,
                 success: function (data) {
-                    console.log(data)
                     successCallback(data);
                 }           
             }); 
